@@ -41,9 +41,11 @@ public class HomeController {
         return "home";
     }
 
-    @GetMapping(value = "/course")
-    public String requestParamExample2(@RequestParam(value = "name", required = true, defaultValue = "Cybertek") String name){
-        System.out.println(name);
+
+    // URL de sadece course2 diye yazılıp bırakılırsa default olarak bir değer atıyoruz... Name parametresine bu değeri requestparam ile cast ediyoruz...
+    @GetMapping("/home/course2")
+    public String requestParamExample2(@RequestParam(value = "course2", required = false, defaultValue = "Cybertek") String name){
+        System.out.println("hi "+name);
         return "home";
     }
 
