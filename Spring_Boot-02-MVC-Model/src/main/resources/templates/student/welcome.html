@@ -12,7 +12,7 @@
     <h1 th:text="${id}"></h1>
 
     <ul>
-        <li th:text="${numbers}">
+        <li th:each="number : ${numbers}" th:text="${number}">
 
         </li>
     </ul>
@@ -27,11 +27,13 @@
     <a th:href="@{https://google.com}">Google</a>
     <a th:href="@{/student/register}">Register</a>
 
- <!-- Adding parameters to Link?....-->
+    <!-- Adding parameters to Link?....-->
 
     <a th:href="@{/student/welcome(id=3)}">Link2</a>
     <a th:href="@{/student/welcome(id=${student.id})}">Link3</a>
 
+    <!-- Fragments....-->
+    <div th:replace="fragments/footer :: ozzy"></div>
 
 </body>
 </html>
