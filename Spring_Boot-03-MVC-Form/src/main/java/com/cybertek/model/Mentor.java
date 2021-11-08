@@ -10,9 +10,10 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Mentor {
+
     private String firstName;
     private String lastName;
-    private String eMail;
+    private String email;
     private String gender;
     private boolean graduated;
     private String batch;
