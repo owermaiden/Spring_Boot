@@ -17,34 +17,53 @@
             Welcome to Employee Registration Page
         </h2>
         <div class="card-body">
-            <form th:object="${employee}" th:action="@{/employee/confirm}" method="post">
+            <form th:object="${employee}" th:action="@{/employee/confirm}" method="post" class="needs-validation" novalidate>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="firstName">First Name</label>
-                        <input th:field="*{firstName}" type="text" class="form-control" id="firstName" >
+                        <input th:field="*{firstName}" type="text" class="form-control" id="firstName" required >
+                        <div class="invalid-feedback">
+                            Hata...
+                        </div>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="lastName">Last Name</label>
-                        <input th:field="*{lastName}" type="text" class="form-control" id="lastName" >
+                        <input th:field="*{lastName}" type="text" class="form-control" id="lastName" required >
+                        <div class="invalid-feedback">
+                            Looks good!
+                        </div>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="birthDate">Birth Date</label>
-                        <input th:field="*{birthday}" type="date" class="form-control" id="birthDate" >
+                        <input th:field="*{birthday}" type="date" class="form-control" id="birthDate" required >
+                        <div class="invalid-feedback">
+                            Looks good!
+                        </div>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">Email</label>
-                        <input th:field="*{email}" type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                        <input th:field="*{email}" type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
+                        <div class="invalid-feedback">
+                            Looks good!
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPassword4">Password</label>
-                        <input th:field="*{password}" type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                        <input th:field="*{password}" type="password" class="form-control" id="inputPassword4"
+                               placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" required>
+                        <div class="invalid-feedback">
+                            Olmuyor olmuyor....
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputAddress">Address</label>
-                    <input th:field="*{address2}" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    <input th:field="*{address2}" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+                    <div class="invalid-feedback">
+                        Looks good!
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="inputAddress2">Address 2</label>
@@ -53,7 +72,10 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputCity">City</label>
-                        <input th:field="*{city}" type="text" class="form-control" id="inputCity">
+                        <input th:field="*{city}" type="text" class="form-control" id="inputCity" required>
+                        <div class="invalid-feedback">
+                            Looks good!
+                        </div>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputState">State</label>
@@ -63,7 +85,10 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputZip">Zip</label>
-                        <input th:field="*{zipCode}" type="text" class="form-control" id="inputZip">
+                        <input th:field="*{zipCode}" type="text" class="form-control" id="inputZip" pattern="[0-9]{5}" required>
+                        <div class="invalid-feedback">
+                            Looks good!
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -82,6 +107,26 @@
 </div>
 
 <!-- Optional JavaScript -->
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
