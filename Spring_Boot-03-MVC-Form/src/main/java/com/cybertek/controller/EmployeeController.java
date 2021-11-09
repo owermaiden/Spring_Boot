@@ -1,5 +1,6 @@
 package com.cybertek.controller;
 
+import com.cybertek.datagenerator.DataGenerator;
 import com.cybertek.model.Employee;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,11 +20,9 @@ public class EmployeeController {
     public String showEmployee(Model model){
 
         model.addAttribute("employee", new Employee());
+        model.addAttribute("states", DataGenerator.getStateList());
 
-        List<String> states = Arrays.asList("Alaska","Virginia","Denver");
-        model.addAttribute("states", states);
-
-        return "employee/employee-register";
+        return "employee/employee-register2";
 
     }
 
