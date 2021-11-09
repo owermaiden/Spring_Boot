@@ -27,9 +27,11 @@ public class EmployeeController {
     }
 
     @PostMapping("/confirm")
-    public String submitForm(@ModelAttribute("employee") Employee employee){
+    public String submitForm(@ModelAttribute("employee") Employee employee, Model model){
 
-        return "employee/employee-confirmation";
+        model.addAttribute("employeeList", Arrays.asList(employee));
+
+        return "employee/employee-list";
     }
 
 }

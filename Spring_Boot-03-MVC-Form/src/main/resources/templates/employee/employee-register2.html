@@ -17,7 +17,7 @@
             Welcome to Employee Registration Page
         </h2>
         <div class="card-body">
-            <form th:object="${employee}" action="/employee/confirm" method="post">
+            <form th:object="${employee}" th:action="@{/employee/confirm}" method="post">
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="firstName">First Name</label>
