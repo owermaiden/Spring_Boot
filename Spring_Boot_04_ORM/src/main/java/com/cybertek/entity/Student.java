@@ -23,13 +23,13 @@ public class Student {
 
     @Temporal(TemporalType.DATE)
     private Date birthDate;
-    @Temporal(TemporalType.TIME)
+    @Temporal(TemporalType.TIME)        // This is old java date-time....
     private Date birthTime;
     @Temporal(TemporalType.TIMESTAMP)
     private Date birthDateTime;
 
     @Column(columnDefinition = "DATE")
-    private LocalDate localDate;
+    private LocalDate localDate;         // LocalDate come with Java8
     @Column(columnDefinition = "TIME")
     private LocalDate localTime;
     @Column(columnDefinition = "TIMESTAMP")
