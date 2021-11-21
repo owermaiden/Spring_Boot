@@ -4,7 +4,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.math.BigDecimal;
 
-@MappedSuperclass
+@MappedSuperclass                   // there is no table named Account... This is a superclass...
 public class Account {
 
     @Id
