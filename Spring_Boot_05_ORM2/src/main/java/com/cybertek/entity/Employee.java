@@ -31,6 +31,10 @@ public class Employee extends BaseEntity {    // this is parent entity....
     @JoinColumn(name = "department_id")     // you can change default column name by this annotation....
     private Department department;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "region_id")
+    private Region region;
+
     public Employee(String firstName, String lastName, String email, LocalDate hireDate, Gender gender, int salary) {
         this.firstName = firstName;
         this.lastName = lastName;
