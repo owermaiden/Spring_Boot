@@ -4,7 +4,6 @@ import com.cybertek.entity.Department;
 import com.cybertek.entity.Employee;
 import com.cybertek.entity.Region;
 import com.cybertek.enums.Gender;
-import com.cybertek.repository.DepartmentRepository;
 import com.cybertek.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -25,7 +24,6 @@ public class DataGenerator implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         List<Employee> employeesList = new ArrayList<>();
-        List<Department> departmentList = new ArrayList<>();
 
         Employee e1 = new Employee("Berrie", "Manueau", "bmanueau0@dion.ne.jp", LocalDate.of(2006,04,20) , Gender.F, 4);
         Employee e2 = new Employee("Aeriell", "McNee", "amcnee1@google.es", LocalDate.of(2009,01,26), Gender.F, 3);
@@ -47,8 +45,8 @@ public class DataGenerator implements CommandLineRunner {
 
 
         e1.setDepartment(d1);
-        e2.setDepartment(d2);
-        e3.setDepartment(d3);
+        e2.setDepartment(d1);
+        e3.setDepartment(d1);
         e4.setDepartment(d4);
         e5.setDepartment(d5);
 
@@ -59,10 +57,11 @@ public class DataGenerator implements CommandLineRunner {
         e5.setRegion(r5);
 
         employeesList.addAll(Arrays.asList(e1,e2,e3,e4,e5));
-        departmentList.addAll(Arrays.asList(d1,d2,d3,d4,d5));
 
         employeeRepository.saveAll(employeesList);
         // departmentRepository.saveAll(departmentList);
+
+        employeeRepository.deleteById(1);
 
 
 

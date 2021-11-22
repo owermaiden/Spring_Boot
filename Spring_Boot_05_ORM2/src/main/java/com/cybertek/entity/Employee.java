@@ -26,8 +26,8 @@ public class Employee extends BaseEntity {    // this is parent entity....
     private Gender gender;
 
     private int salary;
-
-    @OneToOne(cascade = CascadeType.ALL)    // If you save Employee persist...then do it to department as well...Because Employee has OnetoOne relationship with Department
+                          // we cannot delete in ManyToOne if id is using in another row... Cascade.ALL sıkıntı çıkarır..
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY)    // If you save Employee persist...then do it to department as well...Because Employee has OnetoOne relationship with Department
     @JoinColumn(name = "department_id")     // you can change default column name by this annotation....
     private Department department;
 

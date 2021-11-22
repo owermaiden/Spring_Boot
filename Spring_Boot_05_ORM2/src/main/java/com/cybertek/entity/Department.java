@@ -18,8 +18,10 @@ public class Department extends BaseEntity {    // this is child entity....
     private String department;
     private String division;
 
+    /*
     @OneToOne(mappedBy = "department")  // do not put any foreign key in my table ... Employee is the owner...Business logic
     private Employee employee;
+    */
 
     public Department(String department, String division) {
         this.department = department;
