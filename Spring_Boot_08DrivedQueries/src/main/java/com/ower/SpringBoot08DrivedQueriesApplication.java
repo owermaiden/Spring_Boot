@@ -1,6 +1,7 @@
 package com.ower;
 
 import com.ower.repository.DepartmentRepository;
+import com.ower.repository.EmployeeRepository;
 import com.ower.repository.RegionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -17,12 +18,15 @@ public class SpringBoot08DrivedQueriesApplication {
     @Autowired
     DepartmentRepository departmentRepository;
 
+    @Autowired
+    EmployeeRepository employeeRepository;
+
     public static void main(String[] args) {
         SpringApplication.run(SpringBoot08DrivedQueriesApplication.class, args);
     }
 
     @PostConstruct
-    public void testRegions(){
+    public void testQueries(){
         System.out.println("-------------------Regions start---------------------");
 
         System.out.println("findRegionsByCountry: "+ regionRepository.findRegionsByCountry("Canada"));
@@ -45,7 +49,7 @@ public class SpringBoot08DrivedQueriesApplication {
         System.out.println("-------------------Department ends----------------------");
         System.out.println("-------------------Employee start---------------------");
 
-
+        System.out.println("findByEmailIsNull: "+ employeeRepository.findByEmailIsNull());
 
         System.out.println("-------------------Employee ends----------------------");
     }
