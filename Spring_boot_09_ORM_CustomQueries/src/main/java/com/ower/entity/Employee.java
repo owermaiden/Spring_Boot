@@ -9,6 +9,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+//@Entity(name="Employees").....böyle de yazabiliriz..Entity name değişmiş olur...Query de Employees kullanırız....
 @Entity
 @Table(name = "employees")
 @NoArgsConstructor

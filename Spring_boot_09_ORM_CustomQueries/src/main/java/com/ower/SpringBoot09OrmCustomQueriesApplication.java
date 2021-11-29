@@ -21,6 +21,10 @@ public class SpringBoot09OrmCustomQueriesApplication {
     public void testEmployee(){
         System.out.println(employeeRepository.getEmployeeDetail());
         System.out.println(employeeRepository.getEmployeeSalary());
+        System.out.println(employeeRepository.getEmployeeByEmail("myakovlivf@ucsd.edu"));
+        System.out.println(employeeRepository.getEmployeeByEmailAndSalary(75283, "abendelowg@google.com.hk"));
+        System.out.println(employeeRepository.getEmployeesBySalary(114983));
+        System.out.println(employeeRepository.getEmployeesByFirstNameOrSalary(114983, "Jodi"));
     }
 
 }
