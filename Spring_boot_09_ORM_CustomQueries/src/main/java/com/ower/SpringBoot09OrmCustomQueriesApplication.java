@@ -1,5 +1,6 @@
 package com.ower;
 
+import com.ower.repository.DepartmentRepository;
 import com.ower.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -12,6 +13,9 @@ public class SpringBoot09OrmCustomQueriesApplication {
 
     @Autowired
     EmployeeRepository employeeRepository;
+
+    @Autowired
+    DepartmentRepository departmentRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBoot09OrmCustomQueriesApplication.class, args);
@@ -30,6 +34,8 @@ public class SpringBoot09OrmCustomQueriesApplication {
 
         //named query
         System.out.println(employeeRepository.retrieveEmployeeSalaryGreaterThan(100000));
+
+
     }
 
 }
