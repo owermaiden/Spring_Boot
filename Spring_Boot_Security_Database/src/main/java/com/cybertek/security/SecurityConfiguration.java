@@ -25,18 +25,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .httpBasic(); // basic http authentication
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .inMemoryAuthentication()
-                .withUser("admin").password(passwordEncoder().encode("admin123")).roles("ADMIN")
-                .and()
-                .withUser("ower").password(passwordEncoder().encode("ower123")).roles("USER")
-                .and()
-                .withUser("manager").password(passwordEncoder().encode("manager123")).roles("MANAGER");
-
-    }
-
     @Bean
     PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
