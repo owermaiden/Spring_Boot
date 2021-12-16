@@ -42,7 +42,7 @@ public class SpringBoot08DrivedQueriesApplication {
 
         System.out.println("findDepartmentsBy: "+ departmentRepository.findByDepartment("Furniture"));
         System.out.println("findDepartmentsByDivision: "+ departmentRepository.findDepartmentsByDivision("Health"));
-        System.out.println("findByDivisionIs: "+ departmentRepository.findByDivisionIs("Furniture"));
+        System.out.println("findByDivisionIs: "+ departmentRepository.findByDivisionEquals("Home"));
         System.out.println("findDepartmentsByDivisionEndingWith: "+ departmentRepository.findDepartmentsByDivisionEndingWith("ics"));
         System.out.println("findDistinctTop3ByDivisionContaining: "+ departmentRepository.findDistinctTop3ByDivisionContaining("ics"));
 

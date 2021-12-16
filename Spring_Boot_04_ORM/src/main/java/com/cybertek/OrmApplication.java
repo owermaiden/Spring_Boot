@@ -20,7 +20,7 @@ public class OrmApplication {
         SpringApplication.run(OrmApplication.class, args);
     }
 
-    @PostConstruct
+    @PostConstruct               // postcunstruct application çalışmadan önce çalıştırılmasını istediğmiz bir method...
     public void dataInit(){
 
         Car c1 = new Car("BMW", "M5");
@@ -30,6 +30,9 @@ public class OrmApplication {
         carRepository.save(c1);
         carRepository.save(c2);
         carRepository.save(c3);
+
+        carRepository.delete(c2);
+        carRepository.save(c2);
     }
 
 }

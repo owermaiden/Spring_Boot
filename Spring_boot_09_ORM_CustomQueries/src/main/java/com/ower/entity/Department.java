@@ -13,12 +13,15 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
+
 // we created named query in entity
 @NamedQuery(name="Department.findOzzyDepartment",
-        query = "SELECT d FROM Department d WHERE d.division=?1")
-@NamedNativeQuery(name="Department.countAllDepartments",
+        query = "SELECT d FROM Department d WHERE d.division=?1")   //JPQL
+
+@NamedNativeQuery(name="Department.countAllDepartments",            //SQL
         query="SELECT * FROM departments",
         resultClass = Department.class)
+
 public class Department {
 
     @Id

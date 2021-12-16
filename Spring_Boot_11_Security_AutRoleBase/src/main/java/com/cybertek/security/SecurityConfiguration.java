@@ -19,7 +19,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()// request should be authorized
                 .antMatchers("index.html").permitAll()
                 .antMatchers("/profile/**").authenticated() // all the roles are authenticated
-                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/admin/**").hasRole("ADMIN")  // only admin role is permitted or .hasAuthority("ROLE_ADMIN")
                 .antMatchers("/management/**").hasAnyRole("ADMIN", "MANAGER")
                 .and()
                 .httpBasic(); // basic http authentication

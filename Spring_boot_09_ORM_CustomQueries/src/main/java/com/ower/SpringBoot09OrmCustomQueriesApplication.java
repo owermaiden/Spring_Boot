@@ -35,6 +35,10 @@ public class SpringBoot09OrmCustomQueriesApplication {
         //named query
         System.out.println(employeeRepository.retrieveEmployeeSalaryGreaterThan(100000));
 
+        System.out.println(departmentRepository.findOzzyDepartment("Kids"));
+
+        System.out.println(departmentRepository.countAllDepartments());
+
 
     }
 
