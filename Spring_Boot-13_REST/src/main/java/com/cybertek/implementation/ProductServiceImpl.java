@@ -3,9 +3,11 @@ package com.cybertek.implementation;
 import com.cybertek.entity.Product;
 import com.cybertek.repository.ProductRepository;
 import com.cybertek.service.ProductService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
