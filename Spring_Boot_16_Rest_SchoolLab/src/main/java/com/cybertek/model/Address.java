@@ -9,8 +9,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.web.client.RestTemplate;
 
 import javax.persistence.*;
+import java.util.Map;
 
 @Entity
 @NoArgsConstructor
@@ -44,14 +46,27 @@ public class Address extends BaseEntity {
     @JsonBackReference   // dont show this student in address api
     private Student student;
 
-    private Integer currentTemperature;
+    private Integer currentTemperature = consumeTemp(this.city);
 
     private Integer currentTemperature(){
         return consumeTemp(this.city);
     }
 
     public Integer consumeTemp(String city){
-        return 5;
+
+        RestTemplate restTemplate = new RestTemplate();
+
+        String BASE_URL = "http://api.weatherstack.com/current?access_key=abdf4bcdd4d58c99d259f351f3e5f6a2&query=";
+
+        String uri = BASE_URL + city;
+
+        var currentWeather = restTemplate.getForObject(uri, Object.class);
+
+        Map<String, Object> getWeather = (Map<String, Object>) currentWeather;
+
+        Map<String, Object> getTemperature = (Map<String, Object>) getWeather.get("current");
+
+        return Integer.parseInt(getTemperature.get("temperature").toString());
     }
 
 
