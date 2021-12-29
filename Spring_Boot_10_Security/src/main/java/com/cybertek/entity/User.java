@@ -43,6 +43,5 @@ public class User {
             return Arrays.asList(this.permissions.split(","));
         }
         return new ArrayList<>();
-
     }
 }

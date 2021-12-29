@@ -35,6 +35,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .withUser("manager").password(passwordEncoder().encode("manager123")).roles("MANAGER");
 
+
     }
 
     @Bean

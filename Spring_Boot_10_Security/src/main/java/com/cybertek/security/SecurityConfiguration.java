@@ -28,9 +28,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and() // end of authorize request
                 .formLogin()
                 .loginPage("/login")
+                // everything happens here..................
                 .defaultSuccessUrl("/index")
                 .failureUrl("/login?error=true")
-                .permitAll()
+                .permitAll()  // denenmeli....................................................................
                 .and() // end of login
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
