@@ -1,6 +1,7 @@
 package com.cybertek.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Getter;
@@ -16,7 +17,7 @@ import javax.persistence.ManyToOne;
 @Getter
 @Setter
 @NoArgsConstructor
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)  // decide how our fields should look like in json
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)  // decide how our fields should look like in json
 @JsonIgnoreProperties(value = {"hibernate_Lazy_Initializer"}, ignoreUnknown = true) // because fetch type lazy
 public class Cinema extends BaseEntity{
 
