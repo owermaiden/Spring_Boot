@@ -30,7 +30,7 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    @Transactional
+    @Transactional // insert, delete, update operations need different thread..transactional prevents error
     public User createUser(User user) throws ServiceException {
 
         User foundUserByEmail = readByEmail(user.getEmail());
