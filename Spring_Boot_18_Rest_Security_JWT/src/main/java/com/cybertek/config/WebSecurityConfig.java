@@ -20,7 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .csrf()
+                .csrf()// we disabled spring cross site forgery özelliğini...
                 .disable()
                 .authorizeRequests()
                 .antMatchers("/authenticate")//localhost:8080/authenticate yazan herkes buraya ulaşır...
