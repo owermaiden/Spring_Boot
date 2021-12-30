@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: spring-rest-securtiy
+  profiles:
+    active: default
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cybertek
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:data.sql
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+    show-sql: false
+  security:
+    jwt:
+      secret-key: cybertek
+  springdoc:
+    swagger-ui:
+      path: /swagger-ui.html
