@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class SecurityService implements UserDetailsService {
 
-    private UserService userService;
+    private final UserService userService;
 
     public SecurityService(UserService userService) {
         this.userService = userService;
