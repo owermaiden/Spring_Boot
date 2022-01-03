@@ -57,7 +57,7 @@ public class ApiController {
     @PutMapping("/address/{id}")
     public Address updateAddress(@PathVariable("id") long id, @RequestBody Address address) throws Exception {
 
-        Optional<Address> foundAddress = addressRepository.findById(id);
+        var foundAddress = addressRepository.findById(id);
 
         if (!foundAddress.isPresent()) throw new Exception("Address is not exist...");
 

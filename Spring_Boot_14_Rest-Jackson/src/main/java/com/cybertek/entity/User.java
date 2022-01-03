@@ -25,7 +25,7 @@ public class User extends BaseEntity{
 
     @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinColumn(name = "account_details_id")
-    @JsonManagedReference // whenever call api, dont show me account..just other fields... (another way of @JsonIgnore)
+    @JsonManagedReference // whenever call api, show me account here.. but not show user in account...
     private Account account;
 
     public User(String email, String password, String username) {

@@ -29,9 +29,10 @@ public class HomeController {
     }
 
     @GetMapping(value = "/{id}")
-    public Object readUser(@PathVariable("id") Integer id){
+    public User readUser(@PathVariable("id") Integer id){
         String URL = URI + "/{id}";
-        return restTemplate.getForObject(URL,Object.class,id);
+
+        return restTemplate.getForEntity(URL,User.class,id).getBody();
     }
 
     @GetMapping("/test")
