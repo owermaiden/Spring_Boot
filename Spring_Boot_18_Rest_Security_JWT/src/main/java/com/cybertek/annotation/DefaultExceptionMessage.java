@@ -5,7 +5,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.METHOD)
+@Target(ElementType.METHOD)  // this annotation will work at method level
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DefaultExceptionMessage {
 

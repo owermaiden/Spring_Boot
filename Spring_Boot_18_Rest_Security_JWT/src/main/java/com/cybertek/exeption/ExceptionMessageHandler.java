@@ -1,8 +1,7 @@
-package com.cybertek.exception;
+package com.cybertek.exeption;
 
 import com.cybertek.entity.DefaultExceptionMessageDto;
 import com.cybertek.entity.ResponseWrapper;
-import com.cybertek.exeption.ServiceException;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
@@ -17,22 +16,34 @@ import java.lang.reflect.Method;
 import java.nio.file.AccessDeniedException;
 import java.util.Optional;
 
-@RestControllerAdvice
-@Order(Ordered.HIGHEST_PRECEDENCE)
+@RestControllerAdvice  // making this class global
+@Order(Ordered.HIGHEST_PRECEDENCE) // Dont execute spring own serviceExeption, mine has precedence...use this one...
 public class ExceptionMessageHandler {
 
     @ExceptionHandler(ServiceException.class)
     public ResponseEntity<ResponseWrapper> serviceException(ServiceException se){
         String message = se.getMessage();
-        return new ResponseEntity<>(ResponseWrapper.builder().success(false).code(HttpStatus.CONFLICT.value()).message(message).build(),HttpStatus.CONFLICT);
+        return new ResponseEntity<>(ResponseWrapper
+                .builder()
+                .success(false)
+                .code(HttpStatus.CONFLICT.value())
+                .message(message)
+                .build(),HttpStatus.CONFLICT);
     }
 
+    // if role is wrong..spring will throw accessDenied exeption...but now ours is highest precedence..it will throw this exeption...
     @ExceptionHandler(AccessDeniedException.class)
     public ResponseEntity<ResponseWrapper> accessDeniedException(AccessDeniedException se){
-        String message = se.getMessage();
-        return new ResponseEntity<>(ResponseWrapper.builder().success(false).code(HttpStatus.FORBIDDEN.value()).message(message).build(),HttpStatus.CONFLICT);
+        String message = se.getMessage(); // spring
+        return new ResponseEntity<>(ResponseWrapper
+                .builder()
+                .success(false)
+                .code(HttpStatus.FORBIDDEN.value())
+                .message(message)
+                .build(),HttpStatus.CONFLICT);
     }
 
+    // we are customizing exeption.class by making a generic
     @ExceptionHandler({Exception.class, RuntimeException.class, Throwable.class, BadCredentialsException.class})
     public ResponseEntity<ResponseWrapper> genericException(Throwable e, HandlerMethod handlerMethod) {
 

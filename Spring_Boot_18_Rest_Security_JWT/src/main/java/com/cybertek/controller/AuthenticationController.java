@@ -30,7 +30,7 @@ public class AuthenticationController {
 
 
     @PostMapping("/authenticate")
-    @DefaultExceptionMessage(defaultMessage = "Bad Credentials")
+    @DefaultExceptionMessage(defaultMessage = "Bad Credentials") // this message will show in header...and if any exeption happens this "default message" passes to exeptionHandler as a message
     @Operation(summary = "Login to application")
     public ResponseEntity<ResponseWrapper> doLogin(@RequestBody AuthenticationRequest authenticationRequest){
 

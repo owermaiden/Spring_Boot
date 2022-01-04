@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@Builder  // bulunduğu class ı builder gibi . . .  build etmeye yarıyor...
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ResponseWrapper {
 
