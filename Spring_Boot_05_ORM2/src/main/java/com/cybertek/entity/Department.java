@@ -19,8 +19,8 @@ public class Department extends BaseEntity {    // this is child entity....
     private String division;
 
     /*
-    @OneToOne(mappedBy = "department")  // do not put any foreign key in my table ... Employee is the owner...Business logic
-    private Employee employee;
+    @OneToMany(mappedBy = "department")  // do not put any foreign key in my table ... Employee is the owner...Business logic
+    private List<Employee> employee;
     */
 
     public Department(String department, String division) {

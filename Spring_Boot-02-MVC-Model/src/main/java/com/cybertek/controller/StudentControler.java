@@ -23,9 +23,9 @@ public class StudentControler {
         String course = "MVC";
         model.addAttribute("course", course);
 
-        // create some uesrid ramdomly and show it in UI;
-        int studenId = new Random().nextInt(1000);
-        model.addAttribute("id",studenId);
+        // create some userid ramdomly and show it in UI;
+        int studentId = new Random().nextInt(1000);
+        model.addAttribute("id",studentId);
 
         List<Integer> numbers = new ArrayList<>();
         numbers.add(10);

@@ -37,7 +37,7 @@ public class DataGenerator implements CommandLineRunner {
         a2.setPerson(p1);
         a3.setPerson(p1);
 
-        addressRepository.save(a1);  // then save your address thorough your repo....
+        addressRepository.save(a1);  // then save your address to your repo....
         addressRepository.save(a2);
         addressRepository.save(a3);
 
