@@ -24,13 +24,25 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
+    private static final String[] permittedUrls ={
+            "/authenticate",//localhost:8080/authenticate yazan herkes buraya ulaşır...
+            "/create-user",
+            "/api/p1/**",
+            "/v3/api-docs/**",
+            "/swagger-resources/**",
+            "/configuration/security",
+            "/swagger-ui.html",
+            "/swagger-ui/**",
+            "/webjars/**",
+    };
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf()// we disabled spring cross site forgery özelliğini...
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/authenticate")//localhost:8080/authenticate yazan herkes buraya ulaşır...
+                .antMatchers(permittedUrls)
                 .permitAll()
                 .anyRequest()
                 .authenticated();

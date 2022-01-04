@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   application:
-    name: spring-rest-securtiy
+    name: spring-rest-security
   profiles:
     active: default
   datasource:
@@ -10,20 +10,22 @@ spring:
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
-  #sql:
-  #  init:
-   #   mode: always
-    #  data-locations: classpath:data.sql
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: false
-  security:
-    jwt:
-      secret-key: cybertek
-  springdoc:
-    swagger-ui:
-      path: /swagger-ui.html
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:data.sql
+security:
+  jwt:
+    secret-key: cybertek
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+# localhost:8080/swagger-ui.html sayfası openApi sayfamız oluyor...

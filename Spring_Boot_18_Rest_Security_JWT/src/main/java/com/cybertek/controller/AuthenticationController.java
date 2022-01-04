@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@Tag(name = "Authenticate controller",description = "Authenticate API")
+@Tag(name = "Authenticate controller",description = "Authenticate API")// this is for open api
 public class AuthenticationController {
 
     @Autowired
@@ -31,7 +31,7 @@ public class AuthenticationController {
 
     @PostMapping("/authenticate")
     @DefaultExceptionMessage(defaultMessage = "Bad Credentials") // this message will show in header...and if any exeption happens this "default message" passes to exeptionHandler as a message
-    @Operation(summary = "Login to application")
+    @Operation(summary = "Login to application") // this is for open api
     public ResponseEntity<ResponseWrapper> doLogin(@RequestBody AuthenticationRequest authenticationRequest){
 
         String password = authenticationRequest.getPassword();
@@ -50,7 +50,7 @@ public class AuthenticationController {
 
     @PostMapping("/create-user")
     @Operation(summary = "Create a new user")
-    @DefaultExceptionMessage(defaultMessage = "Failed to crate user, please try again")
+    @DefaultExceptionMessage(defaultMessage = "Failed to create user, please try again")
     public ResponseEntity<ResponseWrapper> createAccount(@RequestBody User user) throws ServiceException {
 
         User createdUser = userService.createUser(user);

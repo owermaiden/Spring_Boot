@@ -3,6 +3,7 @@ package com.cybertek.controller;
 import com.cybertek.entity.ResponseWrapper;
 import com.cybertek.entity.User;
 import com.cybertek.service.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -16,6 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/users")
 @EnableGlobalMethodSecurity(prePostEnabled = true)
+@Tag(name = "User controller",description = "User API")// this is for open api
 public class UserController {
 
     @Autowired

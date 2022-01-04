@@ -2,6 +2,7 @@ package com.cybertek.exeption;
 
 import com.cybertek.entity.DefaultExceptionMessageDto;
 import com.cybertek.entity.ResponseWrapper;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
@@ -21,7 +22,7 @@ import java.util.Optional;
 public class ExceptionMessageHandler {
 
     @ExceptionHandler(ServiceException.class)
-    public ResponseEntity<ResponseWrapper> serviceException(ServiceException se){
+    public ResponseEntity<ResponseWrapper> serviceException(@NotNull ServiceException se){
         String message = se.getMessage();
         return new ResponseEntity<>(ResponseWrapper
                 .builder()
@@ -31,9 +32,9 @@ public class ExceptionMessageHandler {
                 .build(),HttpStatus.CONFLICT);
     }
 
-    // if role is wrong..spring will throw accessDenied exeption...but now ours is highest precedence..it will throw this exeption...
+    // if role is wrong..spring will throw exeption which is below generic exeption...we have to throw this exeption somewhere...
     @ExceptionHandler(AccessDeniedException.class)
-    public ResponseEntity<ResponseWrapper> accessDeniedException(AccessDeniedException se){
+    public ResponseEntity<ResponseWrapper> accessDeniedException(@NotNull AccessDeniedException se){
         String message = se.getMessage(); // spring
         return new ResponseEntity<>(ResponseWrapper
                 .builder()
@@ -45,7 +46,7 @@ public class ExceptionMessageHandler {
 
     // we are customizing exeption.class by making a generic
     @ExceptionHandler({Exception.class, RuntimeException.class, Throwable.class, BadCredentialsException.class})
-    public ResponseEntity<ResponseWrapper> genericException(Throwable e, HandlerMethod handlerMethod) {
+    public ResponseEntity<ResponseWrapper> genericException(Throwable e, @NotNull HandlerMethod handlerMethod) {
 
         Optional<DefaultExceptionMessageDto> defaultMessage = getMessageFromAnnotation(handlerMethod.getMethod());
         if (defaultMessage.isPresent() && !ObjectUtils.isEmpty(defaultMessage.get().getMessage())) {
@@ -59,7 +60,8 @@ public class ExceptionMessageHandler {
         }
         return new ResponseEntity<>(ResponseWrapper.builder().success(false).message("Action failed: An error occurred!").code(HttpStatus.INTERNAL_SERVER_ERROR.value()).build(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
-    private Optional<DefaultExceptionMessageDto> getMessageFromAnnotation(Method method) {
+
+    private Optional<DefaultExceptionMessageDto> getMessageFromAnnotation(@NotNull Method method) {
         com.cybertek.annotation.DefaultExceptionMessage defaultExceptionMessage = method.getAnnotation(com.cybertek.annotation.DefaultExceptionMessage.class);
         if (defaultExceptionMessage != null) {
             DefaultExceptionMessageDto defaultExceptionMessageDto = DefaultExceptionMessageDto
@@ -70,11 +72,4 @@ public class ExceptionMessageHandler {
         }
         return Optional.empty();
     }
-
-
-
-
-
-
-
 }
