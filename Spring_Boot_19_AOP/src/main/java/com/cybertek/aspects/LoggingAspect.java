@@ -18,7 +18,7 @@ public class LoggingAspect {
 
     Logger logger = LoggerFactory.getLogger(ProductController.class);
 
-    @Pointcut("execution(* com.cybertek.controller.ProductController.*(..))") // pointcut tells where to apply...
+    @Pointcut("execution(* com.cybertek.controller.ProductController.*(..))") // pointcut tells where to apply...this means execute every method in that controller
     public void pointcut(){}
 
     @Before("pointcut()") // this is an Advice...it tells us When to apply this logging...
@@ -54,7 +54,7 @@ public class LoggingAspect {
     @Pointcut("within(com.cybertek.controller..*)") // under controller package any class, subpackages dahil..
     private void anyControllerOperation(){}
 
-    @Pointcut("@within(org.springframework.stereotype.Service)") // @Service annotation olan tüm classlarda uygula
+    @Pointcut("@within(org.springframework.stereotype.Service)") // @Service annotation olan tüm classlarda uygula - class level annotation
     private void anyServiceAnnotatedOperation(){}
 
     @Before("anyServiceAnnotatedOperation() || anyControllerOperation() ")
@@ -115,13 +115,13 @@ public class LoggingAspect {
     @Pointcut("@annotation(org.springframework.web.bind.annotation.PutMapping)")
     private void anyPutProductOperation(){}
 
-    @Around("anyPostProductOperation()")
+    @Around("anyPostProductOperation()") // combination of before and after.. performance metric
     public Object anyPostControllerAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 
         logger.info("Before(Method : {} - Parameters : {}",proceedingJoinPoint.getSignature().toShortString(),proceedingJoinPoint.getArgs());
 
         List<Product> results = new ArrayList<>();
-//        results =(List<Product>) proceedingJoinPoint.proceed();
+        results =(List<Product>) proceedingJoinPoint.proceed(); // we have to proceed
 
         logger.info("After(Method: {} - Results : {}",proceedingJoinPoint.getSignature().toShortString(),results);
 
