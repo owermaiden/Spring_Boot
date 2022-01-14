@@ -18,10 +18,9 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
 
-
     private final ProductService productService;
 
-    Logger logger = LoggerFactory.getLogger(ProductController.class);
+    // Logger logger = LoggerFactory.getLogger(ProductController.class);
 
     public ProductController(ProductService productService) {
         this.productService = productService;
@@ -34,12 +33,12 @@ public class ProductController {
 
     @GetMapping
     public List<Product> getProducts(){
-
-        logger.info("Before -> Controller:{} - Method:{} - Input Parameter:{}", "ProductController", "getProducts()");
-
+        // we moved logging logic to an Aspect...
+        // logger.info("Before -> Controller:{} - Method:{} - Input Parameter:{}", "ProductController", "getProducts()");
         List<Product> list = productService.getProducts();
         return list;
     }
+
 
     @PostMapping
     public ResponseEntity<List<Product>> createProduct(@RequestBody Product product){
