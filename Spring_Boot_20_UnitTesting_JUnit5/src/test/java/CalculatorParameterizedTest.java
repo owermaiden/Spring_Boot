@@ -35,13 +35,13 @@ public class CalculatorParameterizedTest {
         Assertions.assertNotNull(arg);
     }
 
-    static String[] stringProvider(){
+    static String[] stringProvider(){    // this method must be static and must return array or stream...
         String arr[]={"Java","JS","TS"};
         return arr;
     }
 
     @ParameterizedTest
-    @CsvSource({
+    @CsvSource({                        // use comma seperated arguments
             "10,20,30",
             "20,20,40",
             "30,20,100"
@@ -52,7 +52,7 @@ public class CalculatorParameterizedTest {
 
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/sample-data.csv",numLinesToSkip = 1)
+    @CsvFileSource(resources = "/sample-data.csv",numLinesToSkip = 1)  // resources da bu dosyayı olusturduk...
     void testCase6(int num1,int num2,int result){
         Assertions.assertEquals(result,Calculator.add(num1,num2));
 //        Assertions.assertEquals(result,Calculator.add(num1,num2));
