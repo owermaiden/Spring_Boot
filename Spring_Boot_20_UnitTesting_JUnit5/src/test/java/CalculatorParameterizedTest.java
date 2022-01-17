@@ -2,12 +2,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
 
-import java.util.stream.Stream;
-
 public class CalculatorParameterizedTest {
 
 
-
+    // simplifies what data provider does...Be carefull we don't add @test annotation
     @ParameterizedTest
     @ValueSource(strings = {"Java","JS","TS"})
     void testCase1(String args){
@@ -23,8 +21,8 @@ public class CalculatorParameterizedTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"Java","JS","TS"})
-//    @EmptySource
-//    @NullSource
+//    @EmptySource  -------------------------------------- send empty args...
+//    @NullSource   -------------------------------------- send null args...
     @NullAndEmptySource
     void testCase3(String args){
         Assertions.assertTrue(!args.isEmpty());
