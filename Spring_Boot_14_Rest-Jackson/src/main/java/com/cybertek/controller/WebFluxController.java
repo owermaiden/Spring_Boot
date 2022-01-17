@@ -17,8 +17,8 @@ public class WebFluxController {
 
     private final WebClient webClient = WebClient.builder().baseUrl("http://localhost:8080").build();
 
-    private MovieCinemaRepository movieCinemaRepository;
-    private GenreRepository genreRepository;
+    private final MovieCinemaRepository movieCinemaRepository;
+    private final GenreRepository genreRepository;
 
     public WebFluxController(MovieCinemaRepository movieCinemaRepository, GenreRepository genreRepository) {
         this.movieCinemaRepository = movieCinemaRepository;

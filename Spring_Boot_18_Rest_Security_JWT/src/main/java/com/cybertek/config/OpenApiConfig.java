@@ -2,6 +2,7 @@ package com.cybertek.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +22,7 @@ public class OpenApiConfig {
         securitySchemeItem.setBearerFormat("JWT"); // token type - jwt
         securitySchemeItem.setIn(SecurityScheme.In.HEADER);// where is this token
         securitySchemeItem.setName("Authorization");// what is your key in header
-        io.swagger.v3.oas.models.info.Info infoVersion = new io.swagger.v3.oas.models.info.Info().title("Cybertek API").version("snapshot");// info object
+        Info infoVersion = new Info().title("Cybertek API").version("snapshot");// info object
         SecurityRequirement securityItem = new SecurityRequirement().addList("bearer-jwt", Arrays.asList("read","write")); // read access, write access
 
         return new OpenAPI()

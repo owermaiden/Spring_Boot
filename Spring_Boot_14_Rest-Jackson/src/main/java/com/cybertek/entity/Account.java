@@ -33,7 +33,7 @@ public class Account extends BaseEntity {
     private UserRole role;
 
     @OneToOne(mappedBy = "account")
-    @JsonBackReference  // whenever somebody call account api then dont give them user, same as JsonIgnore but we used this because of onetoone relationship in order to track what is happening in user entity side
+    @JsonBackReference  // whenever somebody calls account api then don't give them user, same as JsonIgnore, but we used this because of onetoone relationship in order to track what is happening in user entity side
     private User user;
 
     public Account(String name, String address, String country, String state, String city, Integer age, String postalCode, UserRole role) {
