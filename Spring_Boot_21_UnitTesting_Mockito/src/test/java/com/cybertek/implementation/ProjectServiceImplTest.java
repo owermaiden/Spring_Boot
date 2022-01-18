@@ -64,7 +64,7 @@ class ProjectServiceImplTest {
         Project project = new Project();
 
         when(projectMapper.convertToEntity(projectDTO)).thenReturn(project);
-        when(projectRepository.save(project)).thenReturn(project);
+        when(projectRepository.save(project)).thenReturn(project); // when this method called return an project object instance.. we are mocking
 
         projectService.save(projectDTO);
 
