@@ -42,4 +42,35 @@ class ProjectServiceImplTest {
 
         assertNotNull(projectDTO1); // verify that our getByProjectCode method returns not null...
     }
+
+    @Test
+    void getByProjectCode_exception_test(){
+
+        // if any empty string to repository happens, then throw exeption... Bunu biz hazırlıyoruz...
+        when(projectRepository.findByProjectCode("")).thenThrow(new RuntimeException("Project Not Found"));
+
+        // Sonra test ettiğimiz methoda gerçekten empty string gönderiyoruz... Bu bir exeption döndürmeli... yukarıda öyle belirledik...
+        Throwable exception = assertThrows(RuntimeException.class,() -> projectService.getByProjectCode(""));
+
+        verify(projectRepository).findByProjectCode(Mockito.anyString());  // verify projectrepo.findbyprojectcode() is working..
+
+        // Sonra bakıyoruz gerçekten bizim verdiğimiz hatayı fırlatıyor mu?..
+        assertEquals(exception.getMessage(),"Project Not Found");
+
+    }
+    @Test
+    void saveTest(){
+        ProjectDTO projectDTO = new ProjectDTO();
+        Project project = new Project();
+
+        when(projectMapper.convertToEntity(projectDTO)).thenReturn(project);
+        when(projectRepository.save(project)).thenReturn(project);
+
+        projectService.save(projectDTO);
+
+        verify(projectRepository).save(project); // verify project repository save method called with our project object..
+
+    }
+
+
 }
