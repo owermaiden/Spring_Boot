@@ -18,7 +18,7 @@ import java.util.List;
 @RequestMapping("/user")
 @Tag(name = "User", description = "User Api")
 public class UserController {
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public UserController(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -30,7 +30,6 @@ public class UserController {
             @ApiResponse(responseCode = "200", description = "Successfully retrieved", content = {@Content(mediaType = "application/json", schema = @Schema(implementation = User.class))}),
             @ApiResponse(responseCode = "400", description = "Something went wrong", content = @Content),
             @ApiResponse(responseCode = "404", description = "User not found", content = @Content),
-
 
     })
     public List<User> readAllUsers(){

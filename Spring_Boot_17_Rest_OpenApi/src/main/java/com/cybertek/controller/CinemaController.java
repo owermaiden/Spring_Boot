@@ -15,7 +15,7 @@ import java.util.List;
 @Tag(name = "Cinema", description = "Cinema Api")
 public class CinemaController {
 
-    private CinemaRepository cinemaRepository;
+    private final CinemaRepository cinemaRepository;
 
     public CinemaController(CinemaRepository cinemaRepository) {
         this.cinemaRepository = cinemaRepository;

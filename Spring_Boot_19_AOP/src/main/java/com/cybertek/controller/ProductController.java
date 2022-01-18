@@ -41,15 +41,11 @@ public class ProductController {
 
 
     @PostMapping
-    public ResponseEntity<List<Product>> createProduct(@RequestBody Product product){
+    public List<Product> createProduct(@RequestBody Product product){
 
         List<Product> set = productService.createProduct(product);
 
-        return ResponseEntity
-                .status(HttpStatus.CREATED)
-                .header("Version", "Cybertek.v1")
-                .header("Operation", "Create")
-                .body(set);
+        return set;
     }
 
     @DeleteMapping(value = "/{id}")

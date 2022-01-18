@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Spring_Boot-00-Start/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot-01-MVC/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot-02-MVC-Model/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot-03-MVC-Form/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_04_ORM/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_05_ORM2/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_06_ORM-Many-to-Many/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_07_ORM_ManyToMany/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_08DrivedQueries/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_boot_09_ORM_CustomQueries/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_10_Security/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_11_Security_AutRoleBase/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_Security_Database/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot-13_REST/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_12_REST_Http-Verbs/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Book_13_REST_ResponseEntity/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_13_REST_ResponseEntity/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_14_Rest-Jackson/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_15_REST_Templete/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_16_Rest_SchoolLab/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_17_Rest_OpenApi/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_18_Rest_Security_JWT/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_19_AOP/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_21_UnitTesting_Mockito/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_20_UnitTesting_JUnit5/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/Spring_Boot_10_Security_Database/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Boot_13_REST_HttpVerbs-Legacy/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$" />
+  </component>
+</project>

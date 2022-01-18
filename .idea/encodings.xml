@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Spring_Boot-00-Start/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot-01-MVC/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot-02-MVC-Model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot-03-MVC-Form/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_04_ORM/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_05_ORM2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_07_ORM_ManyToMany/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_09_ORM_CustomQueries/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_10_Security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_11_Security_AutRoleBase/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_12_REST_Http-Verbs/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_13_REST_ResponseEntity/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_13_REST_ResponseEntity/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_14_Rest-Jackson/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_15_REST_Templete/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_16_Rest_SchoolLab/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_17_Rest_OpenApi/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_18_Rest_Security_JWT/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_19_AOP/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Boot_21_UnitTesting_Mockito/src/main/java" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Spring_Boot_15_REST_Templete" />
+        <module name="Spring_Boot_09_ORM_CustomQueries" />
+        <module name="Spring_Boot_19_AOP" />
+        <module name="Spring_Boot_14_Rest-Jackson" />
+        <module name="Spring_Boot_18_Rest_Security_JWT" />
+        <module name="Spring_Boot_20_UnitTesting_JUnit5" />
+        <module name="Spring_Boot-03-MVC-Form" />
+        <module name="Spring_Boot_11_Security_AutRoleBase" />
+        <module name="Spring_Boot_04_ORM" />
+        <module name="Spring_Boot_05_ORM2" />
+        <module name="Spring_Boot_10_Security" />
+        <module name="Spring_Boot-02-MVC-Model" />
+        <module name="Spring_Boot_21_UnitTesting_Mockito" />
+        <module name="Spring_Boot_12_REST_Http-Verbs" />
+        <module name="Spring_Boot_07_ORM_ManyToMany" />
+        <module name="Spring_Boot_13_REST_ResponseEntity" />
+        <module name="Spring_Boot_16_Rest_SchoolLab" />
+        <module name="Spring_Boot-01-MVC" />
+        <module name="Spring_Boot-00-Start" />
+        <module name="Spring_Boot_17_Rest_OpenApi" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Spring_Boot" target="11" />
+      <module name="Spring_Boot-13_REST_HttpVerbs-Legacy" target="11" />
+      <module name="Spring_Boot_06_ORM-Many-to-One" target="11" />
+      <module name="Spring_Boot_08_DrivedQueries" target="11" />
+      <module name="Spring_Boot_10_Security_Database" target="11" />
+      <module name="SpringBoot-00-Demo" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SpringBoot-00-Demo" options="-parameters" />
+      <module name="Spring_Boot" options="-parameters" />
+      <module name="Spring_Boot-00-Start" options="-parameters" />
+      <module name="Spring_Boot-01-MVC" options="-parameters" />
+      <module name="Spring_Boot-02-MVC-Model" options="-parameters" />
+      <module name="Spring_Boot-03-MVC-Form" options="-parameters" />
+      <module name="Spring_Boot-13_REST_HttpVerbs-Legacy" options="-parameters" />
+      <module name="Spring_Boot_04_ORM" options="-parameters" />
+      <module name="Spring_Boot_05_ORM2" options="-parameters" />
+      <module name="Spring_Boot_06_ORM-Many-to-One" options="-parameters" />
+      <module name="Spring_Boot_07_ORM_ManyToMany" options="-parameters" />
+      <module name="Spring_Boot_08_DrivedQueries" options="-parameters" />
+      <module name="Spring_Boot_09_ORM_CustomQueries" options="-parameters" />
+      <module name="Spring_Boot_10_Security" options="-parameters" />
+      <module name="Spring_Boot_10_Security_Database" options="-parameters" />
+      <module name="Spring_Boot_11_Security_AutRoleBase" options="-parameters" />
+      <module name="Spring_Boot_12_REST_Http-Verbs" options="-parameters" />
+      <module name="Spring_Boot_13_REST_ResponseEntity" options="-parameters" />
+      <module name="Spring_Boot_14_Rest-Jackson" options="-parameters" />
+      <module name="Spring_Boot_15_REST_Templete" options="-parameters" />
+      <module name="Spring_Boot_16_Rest_SchoolLab" options="-parameters" />
+      <module name="Spring_Boot_17_Rest_OpenApi" options="-parameters" />
+      <module name="Spring_Boot_18_Rest_Security_JWT" options="-parameters" />
+      <module name="Spring_Boot_19_AOP" options="-parameters" />
+      <module name="Spring_Boot_20_UnitTesting_JUnit5" options="" />
+      <module name="Spring_Boot_21_UnitTesting_Mockito" options="-parameters" />
+    </option>
+  </component>
+</project>

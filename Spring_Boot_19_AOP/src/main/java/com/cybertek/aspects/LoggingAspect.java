@@ -18,38 +18,38 @@ public class LoggingAspect {
 
     Logger logger = LoggerFactory.getLogger(ProductController.class);
 
-    @Pointcut("execution(* com.cybertek.controller.ProductController.*(..))") // pointcut tells where to apply...this means execute every method in that controller
-    public void pointcut(){}
+//    @Pointcut("execution(* com.cybertek.controller.ProductController.*(..))") // pointcut tells where to apply...this means execute every method in that controller
+//    public void pointcut(){}
+//
+//    @Before("pointcut()") // this is an Advice...it tells us When to apply this logging...
+//    public void log(){
+//        logger.info("-------------");
+//    }
+//
+//
+//    @Before("execution(* com.cybertek.controller.ProductController.*(..))") // we can combine pointcut and advice with this syntax...
+//    public void beforeAdvice(){
+//        logger.info("-----------");
+//    }
 
-    @Before("pointcut()") // this is an Advice...it tells us When to apply this logging...
-    public void log(){
-        logger.info("-------------");
-    }
 
-
-    @Before("execution(* com.cybertek.controller.ProductController.*(..))") // we can combine pointcut and advice with this syntax...
-    public void beforeAdvice(){
-        logger.info("-----------");
-    }
-
-
-    //execution
-    @Pointcut("execution(* com.cybertek.controller.ProductController.up*(..))")   // method ismi up ile başlayan tüm methodlar...
-    private void anyUpdateOperation(){}
-
-    @Pointcut("execution(* com.cybertek.repository.ProductRepository.findById(Long))")  // this method çağırıldığında...
-    private void anyProductRepositoryFindById(){}
-
-    @Before("anyProductRepositoryFindById()")                                           // Bu methoddan önce bu uygulansın...
-    public void beforeProductRepoAdvice(JoinPoint joinPoint){
-        logger.info("Before(findById) -> Method {} - Arguments : {} - Target : {}",joinPoint,joinPoint.getArgs(),joinPoint.getTarget());
-    }
-
-    @Before("anyUpdateOperation()")
-    public void beforeControllerAdvice1(JoinPoint joinPoint){
-        logger.info("Before -> Method {} - Arguments : {} - Target : {}",joinPoint,joinPoint.getArgs(),joinPoint.getTarget());
-    }                                                                 // Method      Arguments          Target
-
+//    //execution
+//    @Pointcut("execution(* com.cybertek.controller.ProductController.up*(..))")   // method ismi up ile başlayan tüm methodlar...
+//    private void anyUpdateOperation(){}
+//
+//    @Pointcut("execution(* com.cybertek.repository.ProductRepository.findById(Long))")  // this method çağırıldığında...
+//    private void anyProductRepositoryFindById(){}
+//
+//    @Before("anyProductRepositoryFindById()")                                           // Bu methoddan önce bu uygulansın...
+//    public void beforeProductRepoAdvice(JoinPoint joinPoint){
+//        logger.info("Before(findById) -> Method {} - Arguments : {} - Target : {}",joinPoint,joinPoint.getArgs(),joinPoint.getTarget());
+//    }
+//
+//    @Before("anyUpdateOperation()")
+//    public void beforeControllerAdvice1(JoinPoint joinPoint){
+//        logger.info("Before -> Method {} - Arguments : {} - Target : {}",joinPoint,joinPoint.getArgs(),joinPoint.getTarget());
+//    }                                                                 // Method      Arguments          Target
+//
     //within - this is class level...
     @Pointcut("within(com.cybertek.controller..*)") // under controller package any class, subpackages dahil..
     private void anyControllerOperation(){}
@@ -60,7 +60,7 @@ public class LoggingAspect {
     @Before("anyServiceAnnotatedOperation() || anyControllerOperation() ")
     public void beforeControllerAdvice2(JoinPoint joinPoint){
         logger.info("Before -> Method : {} - Arguments : {} - Target : {}",joinPoint,joinPoint.getArgs(),joinPoint.getTarget());
-    }
+    }                                                                                                    // get target class ın object ini veriyor...
 
     //annotation - this is method level pointcut...@within is class level
     @Pointcut("@annotation(org.springframework.web.bind.annotation.DeleteMapping)")
